@@ -12,14 +12,17 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template').c
   .querySelector('.setup-similar-item');
 var fragment = document.createDocumentFragment();
 
+var getRandomElement = function (array) {
+  return Math.floor(Math.random() * array.length);
+}
+
 var generatePlayers = function () {
   var players = [];
   for (var i = 0; i < 4; i++) {
     players[i] = {
-      name: FIRST_NAME[Math.floor(Math.random() * FIRST_NAME.length)] + ' '
-        + LAST_NAME[Math.floor(Math.random() * LAST_NAME.length)],
-      coatColor: COAT_COLORS[Math.floor(Math.random() * COAT_COLORS.length)],
-      eyesColor: EYES_COLOR[Math.floor(Math.random() * EYES_COLOR.length)]
+      name: FIRST_NAME[getRandomElement(FIRST_NAME)] + ' ' + LAST_NAME[getRandomElement(LAST_NAME)],
+      coatColor: COAT_COLORS[getRandomElement(COAT_COLORS)],
+      eyesColor: EYES_COLOR[getRandomElement(EYES_COLOR)]
     };
   }
 
