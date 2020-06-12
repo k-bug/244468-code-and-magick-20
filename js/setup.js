@@ -14,7 +14,7 @@ var fragment = document.createDocumentFragment();
 
 var getRandomElement = function (array) {
   return Math.floor(Math.random() * array.length);
-}
+};
 
 var generatePlayers = function () {
   var players = [];
